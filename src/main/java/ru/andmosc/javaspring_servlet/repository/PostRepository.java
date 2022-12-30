@@ -10,7 +10,6 @@ import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicLong;
 
-// Stub
 public class PostRepository {
 
     private final ConcurrentHashMap<Long, Post> data = new ConcurrentHashMap<>();
@@ -36,7 +35,7 @@ public class PostRepository {
         }
         return null;
     }
-    public void removeById(long id) {
+    public void removeById(long id) throws NotFoundException {
         if (id < 0 || id > counter.get() || !data.containsKey(id)) {
             throw new NotFoundException(PostController.ID_NOT_FOUND);
         }

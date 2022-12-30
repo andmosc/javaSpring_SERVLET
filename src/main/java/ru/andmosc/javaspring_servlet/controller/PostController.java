@@ -11,7 +11,7 @@ import java.util.List;
 
 public class PostController {
     public static final String APPLICATION_JSON = "application/json";
-    public static final String ID_NOT_FOUND = "Id not found or list is empty";
+    public static final String ID_NOT_FOUND = "ID not found or list is empty";
     private final PostService service;
     private final Gson gson = new Gson();
 
