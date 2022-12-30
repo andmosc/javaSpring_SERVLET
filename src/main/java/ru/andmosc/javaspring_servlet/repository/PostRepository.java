@@ -35,7 +35,7 @@ public class PostRepository {
         }
         return null;
     }
-    public void removeById(long id) {
+    public void removeById(long id) throws NotFoundException {
         if (id < 0 || id > counter.get() || !data.containsKey(id)) {
             throw new NotFoundException(PostController.ID_NOT_FOUND);
         }
