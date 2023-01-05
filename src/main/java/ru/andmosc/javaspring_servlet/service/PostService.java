@@ -1,12 +1,13 @@
 package ru.andmosc.javaspring_servlet.service;
 
+import org.springframework.stereotype.Component;
 import ru.andmosc.javaspring_servlet.controller.PostController;
 import ru.andmosc.javaspring_servlet.exception.NotFoundException;
 import ru.andmosc.javaspring_servlet.model.Post;
 import ru.andmosc.javaspring_servlet.repository.PostRepository;
 
 import java.util.List;
-
+@Component
 public class PostService {
     private final PostRepository repository;
 
