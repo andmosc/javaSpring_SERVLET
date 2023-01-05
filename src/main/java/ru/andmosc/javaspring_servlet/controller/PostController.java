@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.Reader;
 import java.util.List;
-@Component
 public class PostController {
     public static final String APPLICATION_JSON = "application/json";
     public static final String ID_NOT_FOUND = "ID not found or list is empty";
