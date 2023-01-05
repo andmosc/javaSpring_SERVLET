@@ -1,5 +1,6 @@
 package ru.andmosc.javaspring_servlet.repository;
 
+import org.springframework.stereotype.Component;
 import ru.andmosc.javaspring_servlet.controller.PostController;
 import ru.andmosc.javaspring_servlet.exception.NotFoundException;
 import ru.andmosc.javaspring_servlet.model.Post;
@@ -9,9 +10,8 @@ import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicLong;
-
+@Component
 public class PostRepository {
-
     private final ConcurrentHashMap<Long, Post> data = new ConcurrentHashMap<>();
     private final AtomicLong counter = new AtomicLong();
 
