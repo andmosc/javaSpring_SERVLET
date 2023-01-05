@@ -1,2 +1,2 @@
-### Annotation Config
+### Java Config
 
