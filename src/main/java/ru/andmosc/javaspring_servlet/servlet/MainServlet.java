@@ -1,9 +1,9 @@
 package ru.andmosc.javaspring_servlet.servlet;
-
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import ru.andmosc.javaspring_servlet.config.SpringConfig;
 import ru.andmosc.javaspring_servlet.controller.PostController;
 import ru.andmosc.javaspring_servlet.exception.NotFoundException;
-import ru.andmosc.javaspring_servlet.repository.PostRepository;
-import ru.andmosc.javaspring_servlet.service.PostService;
+
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -14,13 +14,11 @@ public class MainServlet extends HttpServlet {
     public static final String GET = "GET";
     public static final String POST = "POST";
     public static final String DELETE = "DELETE";
-    @Override
+    private final AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
+   @Override
     public void init() {
-        final PostRepository repository = new PostRepository();
-        final PostService service = new PostService(repository);
-        controller = new PostController(service);
+        controller = context.getBean("postController",PostController.class);
     }
-
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) {
         try {
